@@ -1,9 +1,9 @@
 import React from 'react';
 
-import '../../assets/css/styles.css';
+import '../../assets/css/styles.scss';
 const App = () => {
   return (
-    <div>Fist commit!</div>
+    <div>Componetn APp</div>
   );
 }
 
