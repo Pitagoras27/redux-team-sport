@@ -63,5 +63,7 @@ export const initialState = {
     id: 13,
     name: "kakuna",
     image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/14.png",
-  }]
+  }],
+  suplentes: [],
+  titulares: [],
 }
