@@ -1,8 +1,13 @@
-import { createStore, combineReducers, compose } from 'redux';
+import { createStore, compose } from 'redux';
 
 import { initialState } from './initialState';
 
-const reducer = () => ({});
+const reducer = (state = initialState, { type, payload } ) => {
+  switch(type) {
+    default:
+      return state;
+  }
+};
 
 const store = createStore(reducer, initialState);
 

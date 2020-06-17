@@ -1,21 +1,47 @@
 import React from 'react';
 
-const Jugadores = () => (
+import { connect } from 'react-redux';
+
+const Jugadores = ({ players, addTitularPlayer, addSuplente}) => (
   <section>
     <h2>Jugadores</h2>
     <div className="contenedor-jugadores">
       <div>
-        <article className="jugador">
-          <img src='foto' alt='nombre' />
-          <h3>Nombre</h3>
-          <div>
-            <button onClick={() => {}}>Titular</button>
-            <button onClick={() => {}}>Suplente</button>
-          </div>
-        </article>
+        {
+          players.map(player => (
+            <article className="jugador" key={player.id}>
+              <img src={player.image} alt={player.name} />
+              <h3>{player.name}</h3>
+              <div>
+                <button onClick={() => {}}>Titular</button>
+                <button onClick={() => {}}>Suplente</button>
+              </div>
+            </article> 
+          ))
+        }
       </div>
     </div>
   </section>
 );
 
-export default Jugadores;
+const mapStateToProps = store => ({
+  players: store.jugadores,
+});
+
+const mapDispatchToProps = dispatch => {
+  return {
+    addTitularPlayer(titular) {
+      dispatch({
+        type: 'ADD_TITULAR',
+        payload: titular,
+      })
+    },
+    addSuplente(suplente) {
+      dispatch({
+        type: 'ADD_SUPLENTE',
+        payload: suplente,
+      })
+    }
+  }
+}
+export default connect(mapStateToProps, mapDispatchToProps)(Jugadores);
