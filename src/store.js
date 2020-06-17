@@ -2,6 +2,9 @@ import { createStore, compose } from 'redux';
 
 import { initialState } from './initialState';
 
+const composedEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ ||
+window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__();
+
 const reducer = (state = initialState, { type, payload } ) => {
   switch(type) {
     default:
@@ -9,6 +12,6 @@ const reducer = (state = initialState, { type, payload } ) => {
   }
 };
 
-const store = createStore(reducer, initialState);
+const store = createStore(reducer, composedEnhancers());
 
 export default store;
