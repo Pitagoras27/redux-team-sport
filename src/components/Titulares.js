@@ -9,7 +9,7 @@ const Titulares = ({titulares, removeTitulares}) => (
     <div className='cancha'>
       {
         titulares.map(player => (
-          <article className='titular'>
+          <article className='titular' key={player.id}>
             <div>
               <img src={player.image} alt={player.name} />
               <button onClick={() => {}}>X</button>
@@ -31,7 +31,7 @@ const mapDispatchToProps = dispatch => {
   return {
     removeTitulares(player) {
       dispatch({
-        type: 'REMOVE_TIUTLARES',
+        type: 'REMOVE_TITULARES',
         payload: player,
       });
     }
