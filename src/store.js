@@ -22,12 +22,14 @@ const reducer = (state = initialState, { type, payload } ) => {
     case 'REMOVE_TITULARES':
       return {
         ...state,
-        titulares: [],
+        jugadores: state.jugadores.concat(payload),
+        titulares: state.titulares.filter(item => item.id !== payload.id),
       }
     case 'REMOVE_SUPLENTES':
       return {
         ...state,
-        suplentes: [],
+        jugadores: state.jugadores.concat(payload),
+        suplentes: state.suplentes.filter(item => item.id !== payload.id),
       }
     default:
       return state;

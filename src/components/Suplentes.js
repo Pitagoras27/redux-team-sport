@@ -10,7 +10,7 @@ const Suplentes = ({ suplentes, removeSuplentes }) => (
             <article className='suplente' key={player.id}>
               <div>
                   <img src={player.image} alt={player.name} />
-                  <button onClick={() => {}}>X</button>
+                  <button onClick={() => removeSuplentes(player)}>X</button>
               </div>
               <p>{ player.name }</p>
             </article>

@@ -12,7 +12,7 @@ const Titulares = ({titulares, removeTitulares}) => (
           <article className='titular' key={player.id}>
             <div>
               <img src={player.image} alt={player.name} />
-              <button onClick={() => {}}>X</button>
+              <button onClick={() => removeTitulares(player)}>X</button>
             </div>
             <p>{player.name}</p>
           </article>
