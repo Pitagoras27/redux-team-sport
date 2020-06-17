@@ -3,7 +3,7 @@ import { Provider } from 'react-redux';
 
 import EquipoSeleccionado from './EquipoSeleccionado';
 import Jugadores from './Jugadores';
-import store from '../initialState';
+import store from '../store';
 import '../../assets/css/styles.scss';
 
 const App = () => (
